@@ -40,25 +40,25 @@
 </ul>
 
 <ul class="days">
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
+    <li><span class="active-red">1</span></li>
+    <li><span class="active-red">2</span></li>
+    <li><span class="active-red">3</span></li>
+    <li><span class="active-red">4</span></li>
     <li>5</li>
     <li>6</li>
     <li>7</li>
     <li>8</li>
     <li>9</li>
-    <li><span class="active">10</span></li>
+    <li>10</li>
     <li>11</li>
     <li>12</li>
     <li>13</li>
     <li>14</li>
     <li>15</li>
-    <li>16</li>
-    <li>17</li>
-    <li>18</li>
-    <li>19</li>
+    <li><span class="active-green">16</span></li>
+    <li><span class="active-green">17</span></li>
+    <li><span class="active-green">18</span></li>
+    <li><span class="active-yellow">19</span></li>
     <li>20</li>
     <li>21</li>
     <li>22</li>
@@ -74,55 +74,57 @@
 </ul>
 
 <div class="legend__container">
-    <h3>Legenda</h3>
     <ul>
-        <li id="gray">dias indisponíveis</li>
-        <li id="green">dias disponíveis</li>
-        <li id="dark-green">dias lançados</li>
-        <li id="red">dias não letivos</li>
-        <li id="yellow">dia selecionado</li>
+        <h3>Legenda</h3>
+        <li style="color: gray;">dias indisponíveis</li>
+        <li style="color: rgb(1, 7, 1);">dias disponíveis</li>
+        <li style="color: green;">dias lançados</li>
+        <li style="color: red;">dias não letivos</li>
+        <li style="color: rgb(223, 223, 21);">dia selecionado</li>
     </ul>
 </div>
 
-<div>
+<div class="time__class">
     <h3>Horário de Aula:</h3>
-    <select name="" id="">
+    <select>
         <option value="">1ª aula - 07:10 às 07:50</option>
         <option value="">2ª aula - 07:50 às 08:40</option>
         <option value="">3ª aula - 08:40 às 09:10</option>
     </select>
     <button>Excluir</button>
-    <img src="https://img.icons8.com/dotty/80/filled-trash.png" alt="">
 </div>
 
-<div class="li__names">
-    <label for="">Marcar todos como:</label>
-    <button type="button">F</button>
-    <button type="button">C</button>
-    <div>
-        <h3>Nº</h3>
-        <h3>Nome Aluno</h3>
-        <h3>Presença</h3>
-    </div>
-    <div>
-        <div>
-            <h3>1</h3>
-            <h3>Bernardo da Silva</h3>
-            <button>F</button>
-        </div>
-        <div>
-            <h3>2</h3>
-            <h3>Maria Eloisa</h3>
-            <button>C</button>
-        </div>
-        <div>
-            <h3>3</h3>
-            <h3>Victor Gomes</h3>
-            <button>C</button>
-        </div>
-        <div>
-            <button>Salvar</button>
-            <img src="https://img.icons8.com/ios/50/save--v1.png" alt="">
-        </div>
-    </div>
+<div class="list__names">
+    
+    <table>
+        <tr>
+            <th>Nº</th>
+            <th>Nome Aluno</th>
+            <th>Presença</th>
+        </tr>
+
+        <tr>
+            <td class="number__list">1</td>
+            <td>Bernardo da Silva</td>
+            <button id="button__f">F</button>
+        </tr>
+        <tr>
+            <td class="number__list">2</td>
+            <td>Bianca Lopes</td>
+            <button id="button__f">F</button>
+        </tr>
+        <tr>
+            <td class="number__list">3</td>
+            <td>Beatriz Lima</td>
+            <button id="button__f">F</button>
+        </tr>
+        <tr>
+            <td class="number__list">4</td>
+            <td>Carlos Guimarães</td>
+            <button id="button__c">C</button>
+        </tr>
+    </table>
+</div>
+<div class="button__save">
+    <button>Salvar</button>
 </div>
