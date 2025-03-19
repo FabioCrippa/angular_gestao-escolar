@@ -7,19 +7,19 @@
         <div class="container__profile-access">
             <img src= "https://img.icons8.com/3d-fluency/94/book.png" alt="book"/>
             <h3>Escola</h3>
-            <a routerLink="/loginEscola"><button>Acessar</button></a>
+            <button (click)="closeDialogAndNavigate('/loginEscola')">Acessar</button>
         </div>
 
         <div class="container__profile-access">
             <img src="https://img.icons8.com/emoji/48/blue-heart.png" alt="blue-heart"/>
             <h3>Responsável</h3>
-            <a routerLink="/loginResponsavel"><button>Acessar</button></a>
+            <button (click)="closeDialogAndNavigate('/loginResponsavel')">Acessar</button>
         </div>
         
         <div class="container__profile-access">
             <img src="https://img.icons8.com/color/48/clew.png" alt="clew"/>
             <h3>Aluno</h3>
-            <a routerLink="/loginAluno"><button>Acessar</button></a>
+            <button (click)="closeDialogAndNavigate('/loginAluno')">Acessar</button>
         </div>
     </mat-dialog-actions>
 

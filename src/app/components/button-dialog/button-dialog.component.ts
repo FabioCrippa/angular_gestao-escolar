@@ -1,18 +1,26 @@
-import { Component, inject } from '@angular/core';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { RouterLink } from '@angular/router';
+import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-button-dialog',
   standalone: true,
-  imports: [MatDialogModule, RouterLink],
   templateUrl: './button-dialog.component.html',
-  styleUrl: './button-dialog.component.css'
+  styleUrls: ['./button-dialog.component.css'],
+  imports: [MatDialogModule, MatButtonModule, CommonModule]
 })
 export class ButtonDialogComponent {
-  readonly dialog = inject(MatDialog);
 
-  openDialog() {
-    this.dialog.open(ButtonDialogComponent)
+  constructor(
+    public dialogRef: MatDialogRef<ButtonDialogComponent>,
+    private router: Router
+  ) {}
+
+  closeDialogAndNavigate(route: string): void {
+    this.dialogRef.close();
+    this.router.navigate([route]);
   }
 }
