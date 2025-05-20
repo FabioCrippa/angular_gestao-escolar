@@ -1,130 +1,95 @@
-<div class="title__container">
+<div class="diario-container">
+  <div class="title__container">
     <h1>Frequência</h1>
     <div class="icon__container">
-        <label for="">2025</label>
-        <img src="https://img.icons8.com/color/48/calendar--v1.png" alt="">
+      <label>{{ anoAtual }}</label>
+      <img src="https://img.icons8.com/color/48/calendar--v1.png" alt="Ícone de calendário" />
     </div>
-</div>
+  </div>
 
-<div class="data__container">
-    <div class="data__title">
-        <h3>Lançamento de Frequências</h3>
+  <div class="data__container">
+    <h3>Lançamento de Frequências</h3>
+    <p><strong>Turma:</strong> 9º Ano A</p>
+    <p><strong>Disciplina:</strong> Língua Portuguesa</p>
+  </div>
+
+  <div class="calendar__container">
+    <h3>Calendário</h3>
+    <div class="mes-atual">
+      <button (click)="voltarMes()" aria-label="Mês anterior">&lt;</button>
+      {{ nomeMesAtual }} / {{ anoAtual }}
+      <button (click)="avancarMes()" aria-label="Próximo mês">&gt;</button>
     </div>
-    <h3>9º Ano A</h3>
-    <h3>Língua Portuguesa</h3>
-</div>
-
-<!-- <div class="calendar__container">
-    <label for="">Data da Frequência:</label>
-    <div class="calender__container">
-        <input type="date" name="" id="">
-    </div>
-</div> -->
-
-<div class="month">
-    <ul>
-        <li class="prev">&#10094;</li>
-        <li class="next">&#10095;</li>
-        <li>Agosto<br><span style="font-size: 18px;">2025</span></li>
-    </ul>
-</div>
-
-<ul class="weekdays">
-    <li>Dom</li>
-    <li>Seg</li>
-    <li>Ter</li>
-    <li>Qua</li>
-    <li>Qui</li>
-    <li>Sex</li>
-    <li>Sab</li>
-</ul>
-
-<ul class="days">
-    <li><span class="active-red">1</span></li>
-    <li><span class="active-red">2</span></li>
-    <li><span class="active-red">3</span></li>
-    <li><span class="active-red">4</span></li>
-    <li>5</li>
-    <li>6</li>
-    <li>7</li>
-    <li>8</li>
-    <li>9</li>
-    <li>10</li>
-    <li>11</li>
-    <li>12</li>
-    <li>13</li>
-    <li>14</li>
-    <li>15</li>
-    <li><span class="active-green">16</span></li>
-    <li><span class="active-green">17</span></li>
-    <li><span class="active-green">18</span></li>
-    <li><span class="active-yellow">19</span></li>
-    <li>20</li>
-    <li>21</li>
-    <li>22</li>
-    <li>23</li>
-    <li>24</li>
-    <li>25</li>
-    <li>26</li>
-    <li>27</li>
-    <li>28</li>
-    <li>29</li>
-    <li>30</li>
-    <li>31</li>
-</ul>
-
-<div class="legend__container">
-    <ul>
-        <h3>Legenda</h3>
-        <li style="color: gray;">dias indisponíveis</li>
-        <li style="color: rgb(1, 7, 1);">dias disponíveis</li>
-        <li style="color: green;">dias lançados</li>
-        <li style="color: red;">dias não letivos</li>
-        <li style="color: rgb(223, 223, 21);">dia selecionado</li>
-    </ul>
-</div>
-
-<div class="time__class">
-    <h3>Horário de Aula:</h3>
-    <select>
-        <option value="">1ª aula - 07:10 às 07:50</option>
-        <option value="">2ª aula - 07:50 às 08:40</option>
-        <option value="">3ª aula - 08:40 às 09:10</option>
-    </select>
-    <button>Excluir</button>
-</div>
-
-<div class="list__names">
-    
-    <table>
+    <table class="mini-calendar">
+      <thead>
         <tr>
-            <th>Nº</th>
-            <th>Nome Aluno</th>
-            <th>Presença</th>
+          <th>Dom</th>
+          <th>Seg</th>
+          <th>Ter</th>
+          <th>Qua</th>
+          <th>Qui</th>
+          <th>Sex</th>
+          <th>Sab</th>
         </tr>
-
-        <tr>
-            <td class="number__list">1</td>
-            <td>Bernardo da Silva</td>
-            <button id="button__f">F</button>
+      </thead>
+      <tbody>
+        <tr *ngFor="let semana of semanasDoMes">
+          <td *ngFor="let dia of semana; let idx = index"
+              [ngClass]="{
+                'active-yellow': dia && dia === diaAtual && mesAtual === mesHoje && anoAtual === anoHoje,
+                'active-red': dia && feriadosMes.includes(dia),
+                'active-gray': dia && idx > 0 && idx < 6 && !feriadosMes.includes(dia) && !(dia === diaAtual && mesAtual === mesHoje && anoAtual === anoHoje)
+              }">
+            {{ dia || '' }}
+          </td>
         </tr>
-        <tr>
-            <td class="number__list">2</td>
-            <td>Bianca Lopes</td>
-            <button id="button__f">F</button>
-        </tr>
-        <tr>
-            <td class="number__list">3</td>
-            <td>Beatriz Lima</td>
-            <button id="button__f">F</button>
-        </tr>
-        <tr>
-            <td class="number__list">4</td>
-            <td>Carlos Guimarães</td>
-            <button id="button__c">C</button>
-        </tr>
+      </tbody>
     </table>
-</div>
-<div class="button__save">
-    <button>Salvar</button>
+    <div class="legend__container">
+      <h3>Legenda</h3>
+      <ul>
+        <li><span class="legend-gray"></span> Dias letivos</li>
+        <li><span class="legend-yellow"></span> Dia atual</li>
+        <li><span class="legend-red"></span> Feriados (dias não letivos)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="time__class">
+    <h3>Horário de Aula:</h3>
+    <select [(ngModel)]="horarioSelecionado">
+      <option *ngFor="let aula of horariosAulasVisiveis" [value]="aula">
+        {{ aula }}
+      </option>
+    </select>
+  </div>
+
+  <div class="list__names">
+    <h3>Lista de Alunos</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Nº</th>
+          <th>Nome do Aluno</th>
+          <th>Presença</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let aluno of alunos; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ aluno.nome }}</td>
+          <td>
+            <button class="presence-button" [ngClass]="{'presente': aluno.presente, 'falta': !aluno.presente}"
+              (click)="togglePresenca(aluno)">
+              {{ aluno.presente ? 'C' : 'F' }}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="button__save">
+    <button class="save-button" (click)="salvarFrequencia()">Salvar</button>
+  </div>
 </div>

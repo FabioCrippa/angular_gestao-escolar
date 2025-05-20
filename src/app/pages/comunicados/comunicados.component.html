@@ -1,22 +1,21 @@
-<form class="form__comment" action="mailto:someone@example.com" method="post" enctype="text/plain">
-    <h2>COMUNICADOS</h2>
+<div class="comunicados-container">
+  <h1>Comunicados</h1>
+  <p>Envie comunicados importantes para alunos, professores e responsáveis.</p>
+
+  <form class="form__comment">
     <div class="input">
-        De:
-        <input type="text" name="name" id="">
+      <label for="title">Título:</label>
+      <input type="text" id="title" name="title" placeholder="Digite o título do comunicado" required />
     </div>
 
-    <div class="input">
-        Para:
-        <input type="text" name="mail" id="">
+    <div class="textarea">
+      <label for="message">Mensagem:</label>
+      <textarea id="message" name="message" placeholder="Digite a mensagem do comunicado" required></textarea>
     </div>
 
-    <div class="input">
-        Assunto:
-        <textarea name="text-area" id="">Prezada Família,</textarea>
+    <div class="form-actions">
+      <button type="submit">Enviar</button>
+      <button type="reset">Limpar</button>
     </div>
-
-    <div class="file__button">
-        <button type="submit">Enviar</button>
-        <input type="file" name="file__name" id="">
-    </div>
-</form>
+  </form>
+</div>

@@ -1,1 +1,17 @@
-<p>atividades works!</p>
+<div class="atividades-container">
+  <h1>Atividades Desenvolvidas pelos Alunos</h1>
+  <p>Explore as atividades realizadas pelos alunos em diferentes disciplinas e projetos.</p>
+
+  <!-- Galeria de Atividades -->
+  <div class="activities-gallery">
+    <div class="activity-card" *ngFor="let activity of activities">
+      <img [src]="activity.image" alt="Imagem da Atividade" class="activity-image" />
+      <div class="activity-info">
+        <h3>{{ activity.title }}</h3>
+        <p><strong>Aluno:</strong> {{ activity.student }}</p>
+        <p><strong>Disciplina:</strong> {{ activity.subject }}</p>
+        <p>{{ activity.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>

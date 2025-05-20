@@ -1,252 +1,146 @@
-.title {
-    display: flex;
-    justify-content: center;
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.about-container {
+  text-align: center;
+  padding: 20px;
 }
 
-.title > h1 {
-    font-size: 18px;
-    font-weight: 500;
-    font-family: 'Segoe UI';
+.about-container h1 {
+  color: #2c3e50;
+  margin-bottom: 20px;
 }
 
-.box__container {
-    display: flex;
-    justify-content: center;
+.about-container p {
+  font-size: 16px;
+  color: #34495e;
+  line-height: 1.6;
 }
 
-.personal-data__container {
-    display: flex;
-    flex-direction: column;
-    margin-right: 20px;
-
-    font-size: 14px;
-    font-family: 'Segoe UI';
-    font-weight: 500;
+.about-image {
+  width: 200px;
+  margin: 20px 0;
 }
 
-.id > label {
-    margin-right: 10px;
-    font-size: 14px;
-    font-weight: 500;
+.back-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.id > input {
-    width: 60px;
+.back-button:hover {
+  background-color: #2980b9;
 }
 
-.fname > label {
-    font-size: 14px;
-    font-weight: 500;
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
 }
 
-.fname > input {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    outline: 0;
-    margin-bottom: 10px;
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-.date > input {
-    margin-bottom: 10px;
-    margin-left: 10px;
+.contact-form label {
+  text-align: left;
+  font-weight: bold;
 }
 
-.date > label {
-    font-size: 14px;
-    font-weight: 500;
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.parents {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
+.contact-form button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.parents > input {
-    width: 300px;
-    margin-bottom: 10px;
-    outline: 0;
+.contact-form button:hover {
+  background-color: #2980b9;
 }
 
-.parents > label {
-    font-size: 14px;
-    font-weight: 500;
+.contact-info {
+  margin-top: 30px;
+  text-align: left;
 }
 
-.gender {
-    display: flex;
-    margin-bottom: 10px;
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.gender > label {
-    margin-right: 10px;
+.title h1 {
+  text-align: center;
+  color: #2c3e50;
 }
 
-.contact {
-    display: flex;
-    flex-direction: column;
-    width: 150px;
-    margin-bottom: 10px;
+.section {
+  margin-bottom: 20px;
 }
 
-.contact > input {
-    outline: 0;
+.section h2 {
+  color: #34495e;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
 }
 
-.contact > label {
-    font-size: 14px;
-    font-weight: 500;
+.form-group {
+  margin-bottom: 15px;
 }
 
-.identity-card__container {
-    display: flex;
-    flex-direction: column;
-    margin-right: 20px;
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-.identity {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.identity > label {
-    font-size: 14px;
-    font-weight: 500;
+.add-button,
+.save-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.date > label {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.cpf {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-}
-
-.cpf > label {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.address {
-    display: flex;
-    flex-direction: column;
-}
-
-.address > input {
-    width: 300px;
-    margin-bottom: 10px;
-    outline: 0;
-}
-
-.address > label {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.city {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-}
-
-.city > label {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.state {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-}
-
-.state > label {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.button-save__container {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.button-save__container > button {
-    width: 200px;
-    padding: 3px;
-    border-radius: 25px;
-    background-color: black;
-    color: white;
-    font-family: 'Segoe UI';
-    font-weight: 500;
-    font-size: 16px;
-    border: none;
-}
-
-.course__container {
-    display: flex;
-    flex-direction: column;
-}
-
-.course {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-}
-
-.course > label {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.course > button {
-    width: 70px;
-    margin-top: 5px;
-}
-
-.group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-}
-
-.group > label {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.group > button {
-    width: 70px;
-    margin-top: 5px;
-}
-
-.graduation {
-    display: flex;
-    flex-direction: column;
-}
-
-.graduation > label {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.photo {
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
-}
-
-.photo > img {
-    width: 100px;
-    height: 100px;
-}
-
-.photo > label {
-    font-size: 14px;
-    font-weight: 500;
+.add-button:hover,
+.save-button:hover {
+  background-color: #2980b9;
 }

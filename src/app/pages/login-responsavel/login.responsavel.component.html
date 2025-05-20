@@ -1,30 +1,42 @@
-<form class="form__container">
+<div class="login-container">
+  <div class="form__logo">
+    <a routerLink="/">
+      <img src="https://img.icons8.com/?size=100&id=b-XFIFHiuLgD&format=png&color=000000"
+        alt="Logo Escola" />
+    </a>
+  </div>
 
-    <div class="form__user">
-        <label for="email">Usuário</label>
-        <div class="form__input">
-            <img src="https://img.icons8.com/ios-glyphs/30/filled-message.png" alt="" srcset="">
-            <input type="email" name="email" id="" placeholder="digite o nome de usuário">
-        </div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h2>Login do Responsável</h2>
 
-        <label for="password">Senha</label>
-        <div class="form__input">
-            <img src="https://img.icons8.com/material-rounded/24/lock--v1.png" alt="" srcset="">
-            <input type="password" placeholder="digite sua senha">
-        </div>
-
-        <div class="form__submit">
-            <a href="/responsavel"><input type="button" value="Entrar"></a>
-        </div>
-
-        <div class="form__forget">
-            <p><a href="">Esqueci minha senha ou usuário.</a></p>
-        </div>
-        
-    </div> 
-
-    <div class="form__logo">
-        <a routerLink=""><img src="https://scontent.faqa4-1.fna.fbcdn.net/v/t39.30808-1/302418061_758974392167104_1166910054634756345_n.png?stp=dst-png_s200x200&_nc_cat=106&ccb=1-7&_nc_sid=f4b9fd&_nc_eui2=AeEv2bgcEZxkxqSoNj-i_VxGWpx-xTob_oZanH7FOhv-hmP0W_EB291SnUAGNMqxy2MzAUDQNCZvfGJt164X4oDr&_nc_ohc=pb1dl4WekOUQ7kNvgF9e2_r&_nc_ht=scontent.faqa4-1.fna&oh=00_AYATo053ZUWu81pGjGELYaGbLQyFKhdgYjsEwu3kTOT5NA&oe=66DFF1E2" alt="" srcset=""></a>
+    <div>
+      <label for="email">Usuário</label>
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        placeholder="Digite o nome de usuário" />
+      <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+        Por favor, insira um email válido.
+      </div>
     </div>
 
-</form>
+    <div>
+      <label for="password">Senha</label>
+      <input
+        type="password"
+        id="password"
+        formControlName="password"
+        placeholder="Digite sua senha" />
+      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        A senha é obrigatória.
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
+
+    <div>
+      <a routerLink="/recuperar-senha">Esqueci minha senha ou usuário.</a>
+    </div>
+  </form>
+</div>

@@ -1,1 +1,23 @@
-<p>contact works!</p>
+<div class="contact-container">
+  <h1>Entre em Contato</h1>
+  <p>Se você tiver dúvidas ou precisar de ajuda, entre em contato conosco!</p>
+
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+    <label for="name">Nome:</label>
+    <input type="text" id="name" formControlName="name" placeholder="Digite seu nome" required />
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" formControlName="email" placeholder="Digite seu e-mail" required />
+
+    <label for="message">Mensagem:</label>
+    <textarea id="message" formControlName="message" rows="5" placeholder="Digite sua mensagem" required></textarea>
+
+    <button type="submit" [disabled]="contactForm.invalid">Enviar</button>
+  </form>
+
+  <div class="contact-info">
+    <h3>Informações de Contato</h3>
+    <p><strong>E-mail:</strong> contatoescola.com</p>
+    <p><strong>Telefone:</strong> (16) 3337-4760</p>
+  </div>
+</div>

@@ -1,0 +1,104 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+.atividades-container {
+  max-width: 1200px;
+  margin: 32px auto;
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.atividades-container h1 {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.atividades-container p {
+  font-size: 16px;
+  color: #34495e;
+  margin-bottom: 20px;
+}
+
+.filter-container {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter-container label {
+  font-size: 14px;
+  color: #2c3e50;
+  margin-right: 10px;
+}
+
+.filter-container select {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.activities-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: flex-start;
+}
+
+.activity-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #0001;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.activity-card:hover {
+  box-shadow: 0 4px 16px #0002;
+  transform: translateY(-4px) scale(1.03);
+}
+
+.activity-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.activity-info {
+  padding: 16px;
+}
+
+.activity-info h3 {
+  font-size: 18px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.activity-info p {
+  font-size: 14px;
+  color: #34495e;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 900px) {
+  .activities-gallery {
+    gap: 16px;
+    justify-content: center;
+  }
+  .activity-card {
+    width: 90vw;
+    max-width: 340px;
+  }
+}

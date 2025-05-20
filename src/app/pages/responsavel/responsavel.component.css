@@ -1,96 +1,181 @@
-.menu-bar__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    background-color: rgb(0,108,139);
-    margin: auto;
+.menu-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  box-shadow: 0 2px 8px #0001;
+  padding: 0 32px;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .menu-bar__logo {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu-bar__title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #2d3a4a;
+  letter-spacing: 1px;
+}
+
+.menu-bar__links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-bar__links li a {
+  text-decoration: none;
+  color: #2d3a4a;
+  font-weight: 500;
+  font-size: 1.1em;
+  transition: color 0.2s;
+}
+
+.menu-bar__links li a:hover {
+  color: #0078d7;
+}
+
+.menu-bar__user {
+  position: relative;
+}
+
+.user-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1em;
+  color: #2d3a4a;
+}
+
+.arrow {
+  font-size: 0.8em;
+}
+
+.user-menu {
+  position: absolute;
+  right: 0;
+  top: 110%;
+  background: #fff;
+  box-shadow: 0 2px 8px #0002;
+  border-radius: 6px;
+  padding: 8px 0;
+  min-width: 120px;
+  z-index: 100;
+}
+
+.user-menu button {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 10px 16px;
+  text-align: left;
+  font-size: 1em;
+  color: #e74c3c;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.user-menu button:hover {
+  background: #f4f4f4;
+}
+
+.dashboard {
+  padding: 32px 0;
+  background: #f7f9fb;
+  min-height: 100vh;
+}
+
+.dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+
+.dashboard-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 32px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 210px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 4px 16px #0002;
+  transform: translateY(-4px) scale(1.03);
+}
+
+.dashboard-card__icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+}
+
+.dashboard-btn {
+  display: inline-block;
+  margin-top: 12px;
+  background: #0078d7;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.dashboard-btn:hover {
+  background: #005fa3;
+}
+
+@media (max-width: 900px) {
+  .dashboard-cards {
+    gap: 16px;
+  }
+  .dashboard-card {
+    width: 160px;
+    padding: 20px 10px 16px 10px;
+  }
+}
+
+@media (max-width: 499px) {
+  .dashboard-cards {
+    flex-direction: column;
     align-items: center;
-    text-align: center;
-}
-
-.menu-bar__logo > h1 {
-    font-size: 18px;
-    color: white;
-    margin-left: 10px;
-}
-
-.menu-bar__list > ul {
-    display: flex;
-    flex-direction: row;
-}
-
-.menu-bar__list > ul > a > li {
-    display: flex;
-    margin-right: 15px;
-    padding: 5px;
-    color: white;
-    font-size: 13px;
-    font-family: 'Segoe UI';
-    cursor: pointer;
-    text-decoration: none;
-}
-
-/* hover */
-.menu-bar__list > ul > a > li:hover {
-    color: rgb(255,126,53);
-}
-
-.menu-bar__button > a > button {
-    background-color: rgb(255,126,53);
-    border-radius: 50px;
-    width: 150px;
-    height: 35px;
-    color: white;
-    border: none;
-    font-family: 'Segoe UI';
-    cursor: pointer;
-}
-
-.menu-bar__button > a > button:hover {
-    background-color: rgb(0, 131, 167);
-}
-
-.button__container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.button-box__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    margin-left: 15px;
-    position: relative;
-    cursor: pointer;
-    width: 200px;
-    height: 60px;
-    background-color: rgb(255,126,53);
-    border-radius: 5px;
-}
-
-.button-box__icon {
-    position: absolute;
-    left: 0;
-}
-
-.button-box__icon > img {
-   width: 30px;
-   margin-left: 10px;
-}
-
-.button-box__container > a > button {
-    font-size: 16px;
-    color: white;
-    background-color: rgb(255,126,53);
-    border: none;
-    margin-left: 30px;
-    cursor: pointer;
+    gap: 12px;
+    padding: 16px 0;
+  }
+  .dashboard-card {
+    width: 90vw;
+    max-width: 320px;
+    padding: 12px 6px 10px 6px;
+  }
+  .dashboard-card__icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 8px;
+  }
+  .dashboard-card button {
+    font-size: 0.95em;
+    padding: 8px 12px;
+  }
 }

@@ -1,97 +1,132 @@
 .school-card__container {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
 }
 
 .school-card {
-    display: flex;
-    width: 450px;
-    height: 250px;
-    background-color: rgb(0, 131, 167);
-    border-radius: 20px;
-    padding: 15px;
+  display: flex;
+  flex-direction: row; /* Alinha os elementos horizontalmente */
+  width: 600px; /* Ajuste a largura conforme necessário */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Alinha o texto à esquerda */
 }
 
 .header__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 40%;
-    margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px; /* Espaço entre a imagem e os dados */
 }
 
-.title > h1 {
-    font-size: 12px;
-    font-family: 'Segoe UI';
-    font-weight: 600;
-    color: rgb(255, 126, 53);
+.header__container .title h1 {
+  font-size: 18px;
+  color: #2c3e50;
+  margin-bottom: 10px;
 }
 
-.img__perfile {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
+.img__perfile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 
-.img__perfile > img {
-    width: 100px;
-}
-
-.img__qrcode {
-    display: flex;
-    justify-content: center;
-}
-
-.img__qrcode > img {
-    width: 60px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+.img__qrcode img {
+  width: 100px;
+  height: 100px;
 }
 
 .personal-data__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: white;
-    width: 60%;
-
-    font-size: 10px;
-    font-weight: 500;
-    font-family: 'Segoe UI';
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.img__logo {
-    display: flex;
-    justify-content: end;
+.personal-data__container label {
+  font-size: 14px;
+  color: #34495e;
+  margin-bottom: 5px;
 }
 
-.img__logo > img {
-    border-radius: 50%;
-    width: 60px;
-}
-.fname > label {
-    font-size: 13px;
-    font-weight: 500;
-    font-family: 'Segoe UI';
+.img__logo img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 10px;
 }
 
 .valid {
-    display: flex;
-    align-items: center;
-    justify-content: end;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.valid > label {
-    font-size: 30px;
-    font-weight: 500;
-    font-family: 'Segoe UI';
-    color: rgb(255, 126, 53);
-    margin-left: 5px;
+.valid img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
 }
 
-.valid > img {
-    width: 30px;
+.filter__container {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.filter__name input {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.table {
+  margin-top: 20px;
+}
+
+.table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.print-card {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.print-card button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.print-card button:hover {
+  background-color: #2980b9;
 }
 
 #myInput {
@@ -136,16 +171,27 @@ td, th {
     elementos alternativos, selecionando 
     elementos específicos por número. 
 */
-tr:nth-child(even) {
-    background-color: #dddddd;
+
+/* Ocultar elementos desnecessários na impressão */
+@media print {
+  body * {
+    visibility: hidden; /* Oculta todos os elementos */
+  }
+
+  .school-card__container, .school-card {
+    visibility: visible; /* Exibe apenas a carteirinha */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ajusta a largura para ocupar a página */
+  }
+
+  .filter__container, .table, .print-card {
+    display: none; /* Oculta o filtro, a tabela e o botão de impressão */
+  }
 }
 
-.print-card {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-}
-
-.print-card > button {
-    cursor: pointer;
+.logo-right img {
+  width: 60px; /* Reduz a largura do logo */
+  height: auto; /* Mantém a proporção da altura */
 }

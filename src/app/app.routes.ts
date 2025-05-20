@@ -19,28 +19,30 @@ import { ComunicadosComponent } from './pages/comunicados/comunicados.component'
 import { DiarioComponent } from './pages/diario/diario.component';
 import { AtividadesComponent } from './pages/atividades/atividades.component';
 import { MensagensComponent } from './pages/mensagens/mensagens.component';
-
+import { CadastroUsuarioComponent } from './features/cadastro-usuario/cadastro-usuario.component'; // Importação do componente
+import { AuthGuard } from './core/guards/auth.guard'; // Importação do AuthGuard
 
 export const routes: Routes = [
-    {path: '', redirectTo: '/home', pathMatch: 'full'},
-    {path: 'home', component: HomeComponent},
-    {path: 'about', component: AboutComponent},
-    {path: 'contact', component: ContactComponent},
-    {path: 'loginEscola', component: LoginEscolaComponent},
-    {path: 'escola', component: EscolaComponent},
-    {path: 'loginResponsavel', component: LoginResponsavelComponent},
-    {path: 'responsavel', component: ResponsavelComponent},
-    {path: 'loginAluno', component: LoginAlunoComponent},
-    {path: 'aluno', component: AlunoComponent},
-    {path: 'cadastroProfessor', component: CadastroProfessorComponent},
-    {path: 'cadastroAluno', component: CadastroAlunoComponent},
-    {path: 'carteirinhaEstudante', component: CarteirinhaEstudanteComponent},
-    {path: 'listaAlunos', component: ListaAlunosComponent},
-    {path: 'listaProfessores', component: ListaProfessoresComponent},
-    {path: 'notas', component: NotasComponent},
-    {path: 'comunicados', component: ComunicadosComponent},
-    {path: 'diario', component: DiarioComponent},
-    {path: 'atividades', component: AtividadesComponent},
-    {path: 'mensagens', component: MensagensComponent},
-    {path: '**', component: NotFoundComponent},
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent },
+    { path: 'about', component: AboutComponent },
+    { path: 'contact', component: ContactComponent },
+    { path: 'loginEscola', component: LoginEscolaComponent },
+    { path: 'escola', component: EscolaComponent },
+    { path: 'loginResponsavel', component: LoginResponsavelComponent },
+    { path: 'responsavel', component: ResponsavelComponent },
+    { path: 'loginAluno', component: LoginAlunoComponent },
+    { path: 'aluno', component: AlunoComponent },
+    { path: 'cadastroProfessor', component: CadastroProfessorComponent },
+    { path: 'cadastroAluno', component: CadastroAlunoComponent },
+    { path: 'carteirinhaEstudante', component: CarteirinhaEstudanteComponent },
+    { path: 'listaAlunos', component: ListaAlunosComponent },
+    { path: 'listaProfessores', component: ListaProfessoresComponent },
+    { path: 'notas', component: NotasComponent },
+    { path: 'comunicados', component: ComunicadosComponent },
+    { path: 'diario', component: DiarioComponent },
+    { path: 'atividades', component: AtividadesComponent },
+    { path: 'mensagens', component: MensagensComponent },
+    { path: 'cadastroUsuario', component: CadastroUsuarioComponent, canActivate: [AuthGuard] }, // Proteção de rota
+    { path: '**', component: NotFoundComponent },
 ];

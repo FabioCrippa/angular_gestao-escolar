@@ -1,18 +1,21 @@
 <div class="container__menu-bar">
+  <!-- Logo -->
+  <div class="logo__menu-bar">
+    <img src="https://img.icons8.com/?size=100&id=b-XFIFHiuLgD&format=png&color=000000" alt="Logo" />
+    <h1>Lar Escola Rita Maria de Jesus</h1>
+  </div>
 
-    <div class="logo__menu-bar">
-        <img src="https://img.icons8.com/?size=100&id=b-XFIFHiuLgD&format=png&color=000000" alt="" srcset="">
-        <h1>Lar Escola Rita Maria de Jesus</h1>
-    </div>
+  <!-- Lista de Navegação -->
+  <nav class="lista__menu-bar">
+    <ul>
+      <li><a routerLink="/about">Quem somos</a></li>
+      <li><a routerLink="/contact">Contato</a></li>
+      <li><a routerLink="/atividades">Atividades</a></li>
+    </ul>
+  </nav>
 
-    <div class="lista__menu-bar">
-        <ul>
-            <li><a routerLink="/about">Quem somos</a></li>
-            <li><a routerLink="/contact">Contato</a></li>
-        </ul>
-    </div>
-    
-    <div>
-        <button mat-button (click)="openDialog()">Acessar</button>
-    </div>
+  <!-- Botão de Acesso -->
+  <div class="access__menu-bar">
+    <button mat-raised-button color="primary" (click)="openDialog()">Acessar</button>
+  </div>
 </div>

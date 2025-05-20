@@ -1,77 +1,207 @@
+/* Estilos para a página de login */
+body, html {
+  background: #f7f9fb;
+  min-height: 100vh;
+}
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7f9fb;
+}
+
 .form__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #0001;
+  padding: 40px 32px 32px 32px;
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form__logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.form__logo img {
+  width: 56px;
+  height: 56px;
+}
+
+.form__container h1 {
+  font-size: 1.7em;
+  font-weight: bold;
+  color: #2d3a4a;
+  margin-bottom: 8px;
+}
+
+.form__container p {
+  color: #6c7a89;
+  margin-bottom: 24px;
 }
 
 .form__user {
-    display: flex;    
-    flex-direction: column;
-    margin-right: 20px;
-    width: 250px;
+  width: 100%;
+  margin-bottom: 18px;
 }
 
-.form__user > label {
-    display: flex;
-    font-family: 'Segoe UI';
-    font-size: 16px;
-    color: black; 
-    margin-bottom: 10px;
+.form__user label {
+  font-weight: 500;
+  color: #2d3a4a;
+  margin-bottom: 6px;
+  display: block;
 }
-
 
 .form__input {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  background: #f2f4f8;
+  border-radius: 6px;
+  padding: 6px 10px;
+  border: 1px solid #e0e0e0;
 }
 
-.form__input > input {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-left: 10px;
-
-    width: 100%;
-    height: 20px;
-
-    border: 1px solid rgba(130, 130, 130, 0.5);
-    outline: 0;
-    border-radius: 25px;
+.form__input img {
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
 }
 
-.form__input > img {
-    width: 20px;
-    height: 20px;
+.form__input input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-size: 1em;
+  padding: 8px 0;
+  color: #2d3a4a;
 }
 
-::-webkit-input-placeholder {
-    color: rgba(130, 130, 130, 0.5);
+.form__input input.invalid {
+  border-bottom: 2px solid #e74c3c;
 }
 
-.form__submit > a > input {
-    width: 100%;
-    border-radius: 25px;
-    border: none;
-    color: white;
-    background-color: black;
-    font-size: 14px;
-    font-family: 'Segoe UI';
-    padding: 5px;
+small {
+  color: #e74c3c;
+  font-size: 0.95em;
+  margin-top: 2px;
+  display: block;
 }
 
-.form__forget > p > a {
-    text-decoration: none;
-    font-size: 12px;
-    color: rgb(130, 130, 130);
+.form__submit {
+  width: 100%;
+  margin-top: 18px;
 }
 
-.form__logo > a > img {
-    border-radius: 50%;
-    width: 250px;
+.form__submit button {
+  width: 100%;
+  background: #0078d7;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 0;
+  font-size: 1.1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.form__submit button:disabled {
+  background: #b0c4de;
+  cursor: not-allowed;
+}
+
+.form__submit button:hover:not(:disabled) {
+  background: #005fa3;
+}
+
+.form__forget {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.form__forget a {
+  color: #0078d7;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.2s;
+}
+
+.form__forget a:hover {
+  color: #005fa3;
+}
+
+form {
+  max-width: 350px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background: #0078d7;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+button[type="submit"]:disabled {
+  background: #b0c4de;
+  cursor: not-allowed;
+}
+
+div {
+  margin-bottom: 14px;
+}
+
+a {
+  color: #0078d7;
+  text-decoration: none;
+  font-size: 0.98em;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+  .form__container {
+    padding: 24px 8px 18px 8px;
+    max-width: 98vw;
+  }
 }
 

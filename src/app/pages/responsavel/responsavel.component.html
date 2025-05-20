@@ -1,82 +1,41 @@
-<div class="menu-bar__container">
-    <div class="menu-bar__logo">
-        <img 
-            src="https://img.icons8.com/?size=100&id=b-XFIFHiuLgD&format=png&color=000000" 
-            alt="" 
-            srcset=""
-            width="40px"
-            height="40px"
-        >
-        <h1 class="manu__lar">Lar escola</h1>
+<nav class="menu-bar">
+  <div class="menu-bar__logo">
+    <img src="https://img.icons8.com/?size=100&id=b-XFIFHiuLgD&format=png&color=000000" alt="Logo" width="40" height="40">
+    <span class="menu-bar__title">Lar Escola</span>
+  </div>
+  <ul class="menu-bar__links">
+    <li><a routerLink="/home">Página inicial</a></li>
+    <li><a routerLink="/notas">Notas</a></li>
+    <li><a routerLink="/comunicados">Comunicados</a></li>
+    <li><a routerLink="/atividades">Atividades</a></li>    
+  </ul>
+  <div class="menu-bar__user">
+    <button class="user-btn" (click)="showUserMenu = !showUserMenu">
+      <img src="https://img.icons8.com/ios-filled/50/user-male-circle.png" width="28" height="28" style="vertical-align: middle;">
+      <span class="user-name">João</span>
+      <span class="arrow">&#9662;</span>
+    </button>
+    <div class="user-menu" *ngIf="showUserMenu">
+      <button (click)="logout()">Sair</button>
     </div>
+  </div>
+</nav>
 
-    <div class="menu-bar__list">
-        <ul>
-            <a href="/home"><li>Página inicial</li></a>
-            <a href="/comunicados"><li>Comunicados</li></a>
-            <a href="/carteirinhaEstudante"><li>Carteirinha de estudante</li></a>
-            <a href="/notas"><li>Notas</li></a>
-        </ul>
+<main class="dashboard">
+  <div class="dashboard-cards">
+    <div class="dashboard-card">
+      <img src="https://img.icons8.com/color/48/exam.png" class="dashboard-card__icon" alt="">
+      <a routerLink="/notas" class="dashboard-btn">Notas</a>
     </div>
-
-    <div class="menu-bar__button">
-        <a href="/home"><button>Olá, João | Sair</button></a>
+    <div class="dashboard-card">
+      <img src="https://img.icons8.com/ios/50/commercial--v1.png" class="dashboard-card__icon" alt="">
+      <a routerLink="/comunicados" class="dashboard-btn">Comunicados</a>
     </div>
-</div>
-
-<div class="button__container">
-
-    <div class="button-box__container">
-        <div class="button-box__icon">
-            <img src="https://img.icons8.com/color/48/identification-documents.png">
-        </div>
-        <a href="/carteirinhaEstudante"><button>Carteirinha de estudante</button></a>
+    <div class="dashboard-card">
+      <img src="https://img.icons8.com/color/48/calendar--v1.png" class="dashboard-card__icon" alt="">
+      <a routerLink="/atividades" class="dashboard-btn">Atividades</a>
     </div>
-
-
-    <div class="button-box__container">
-        <div class="button-box__icon">
-            <img src="https://img.icons8.com/ios/50/teacher.png" alt="" srcset="">
-        </div>
-        <a href="/listaProfessores"><button>Professores</button></a>
-    </div>
-
-
-    <div class="button-box__container">
-        <div class="button-box__icon">
-            <img src="https://img.icons8.com/color/48/exam.png" alt="" srcset="">
-        </div>
-        <a href="/notas"><button>Notas</button></a>
-    </div>
-
-    <div class="button-box__container">
-        <div class="button-box__icon">
-            <img src="https://img.icons8.com/ios/50/commercial--v1.png" alt="" srcset="">
-        </div>
-        <a href="/comunicados"><button>Comunicados</button></a>
-    </div>
-
-    <div class="button-box__container">
-        <div class="button-box__icon">
-            <img src="https://img.icons8.com/stickers/50/journal.png" alt="" srcset="">
-        </div>
-        <a href="/diario"><button>Diário</button></a>
-    </div>
-
-    <div class="button-box__container">
-        <div class="button-box__icon">
-            <img src="https://img.icons8.com/color/48/calendar--v1.png" alt="" srcset="">
-        </div>
-        <a href="/atividades"><button>Atividades</button></a>
-    </div>
-
-    <div class="button-box__container">
-        <div class="button-box__icon">
-            <img src="https://img.icons8.com/flat-round/50/secured-letter--v1.png">
-        </div>
-        <a href="/mensagens"><button>Mensagens</button></a>
-    </div>
-    
-</div>
+  </div>
+</main>
 
 

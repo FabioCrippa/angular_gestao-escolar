@@ -1,147 +1,147 @@
-<form action="">
-    <div class="title">
-        <h1>Cadastrar Professor</h1>
+<form class="form-container">
+  <div class="title">
+    <h1>Cadastrar Professor</h1>
+  </div>
+
+  <div class="box-container">
+    <!-- Dados Pessoais -->
+    <div class="section">
+      <h2>Dados Pessoais</h2>
+      <div class="form-group">
+        <label for="id__number">ID</label>
+        <input type="text" id="id__number" placeholder="01001" />
+      </div>
+
+      <div class="form-group">
+        <label for="fname">Nome Completo</label>
+        <input type="text" id="fname" placeholder="Digite o nome completo" />
+      </div>
+
+      <div class="form-group">
+        <label for="date">Data de Nascimento</label>
+        <input type="date" id="date" />
+      </div>
+
+      <div class="form-group">
+        <label for="parents">Filiação</label>
+        <input type="text" id="mother" placeholder="Nome completo da mãe" />
+        <input type="text" id="father" placeholder="Nome completo do pai" />
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gênero</label>
+        <select id="gender">
+          <option value="0">Não se identificar</option>
+          <option value="1">Masculino</option>
+          <option value="2">Feminino</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="contact">Contato</label>
+        <input type="tel" id="contact" placeholder="(xx) xxxxx-xxxx" />
+      </div>
     </div>
 
-    <div class="box__container">
+    <!-- Documentos -->
+    <div class="section">
+      <h2>Documentos</h2>
+      <div class="form-group">
+        <label for="identity">Documento de Identificação</label>
+        <select id="identity">
+          <option value="0">Selecione</option>
+          <option value="1">Carteira de Habilitação</option>
+          <option value="2">Carteira de Identidade</option>
+        </select>
+      </div>
 
-        <div class="personal-data__container">
+      <div class="form-group">
+        <label for="expedition-date">Data de Expedição</label>
+        <input type="date" id="expedition-date" />
+      </div>
 
-            <div class="id">
-                <label for="id__number">id</label>
-                <input type="text" name="" placeholder="01001">
-            </div>
+      <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input type="text" id="cpf" placeholder="Digite o CPF" />
+      </div>
 
-            <div class="fname">
-                <label for="fname">Nome Completo</label>
-                <input type="text" name="" id="" placeholder="Digite o nome completo">
-            </div>
+      <div class="form-group">
+        <label for="address">Endereço</label>
+        <input type="text" id="street" placeholder="Rua/Avenida" />
+        <input type="text" id="neighborhood" placeholder="Bairro" />
+        <input type="text" id="cep" placeholder="CEP" />
+      </div>
 
-            <div class="date">
-                <label for="date">Data de nascimento</label>
-                <input type="date" name="" id="">
-            </div>
+      <div class="form-group">
+        <label for="city">Cidade</label>
+        <select id="city">
+          <option value="0">Selecione</option>
+          <option value="1">Araraquara</option>
+          <option value="2">Américo Brasiliense</option>
+        </select>
+      </div>
 
-            <div class="parents">
-                <label for="parents">Filiação</label>
-                <input type="text" name="" id="" placeholder="Digite o nome completo da mãe">
-                <input type="text" name="" id="" placeholder="Digite o nome completo do pai">
-            </div>
-
-            <div class="gender">
-                <label for="">Gênero</label>
-                <select>
-                    <option value="0">não se identificar</option>
-                    <option value="1">masculino</option>
-                    <option value="2">feminino</option>
-                </select>
-
-            </div>
-
-            <div class="contact">
-                <label for="contact">Contato</label>
-                <input type="tel" name="" id="" placeholder="(xx) - x.xxxx.xxxx">
-            </div>
-        </div>
-
-        <div class="identity-card__container">
-
-            <div class="identity">
-                <label for="identity">Documento de identificacão</label>
-                <select>
-                    <option value="0">selecione</option>
-                    <option value="1">Carteira de habilitação</option>
-                    <option value="2">Carteira de identidade</option>
-                </select>
-            </div>
-
-            <div class="date">
-                <label for="date">Data de expedição</label>
-                <input type="date" name="" id="">
-            </div>
-
-            <div class="cpf">
-                <label for="cpf">CPF</label>
-                <input type="number" name="" id="" placeholder="Digite o cpf">
-            </div>
-
-            <div class="address">
-                <label for="address">Endereço</label>
-                <input type="text" name="" id="" placeholder="nome completo da rua/avenida">
-                <input type="text" name="" id="" placeholder="bairro">
-                <input type="text" name="" id="" placeholder="cep">
-            </div>
-
-            <div class="city">
-                <label for="city">Cidade</label>
-                <select>
-                    <option value="0">selecione</option>
-                    <option value="1">Araraquara</option>
-                    <option value="2">Américo Brasiliense</option>
-                </select>
-            </div>
-
-            <div class="state">
-                <label for="state">Estado</label>
-                <select>
-                    <option value="0">selecione</option>
-                    <option value="1">AC</option>
-                    <option value="2">AM</option>
-                </select>
-            </div>
-
-            <div class="button-save__container">
-                <button type="button">Salvar</button>
-            </div>
-        </div>
-
-        <div class="course__container">
-
-            <div class="course">
-                <label for="">Curso</label>
-                <select>
-                    <option value="0">selecione</option>
-                    <option value="1">Ensino fundamental I</option>
-                    <option value="2">Ensino fundamental II</option>
-                    <option value="3">Ensino médio</option>
-                </select>
-                <button type="button">adicionar</button>
-            </div>
-
-            <div class="group">
-                <label for="">Turma(s)</label>
-                <select>
-                    <option value="0">selecione</option>
-                    <option value="1">5A</option>
-                    <option value="2">5B</option>
-                    <option value="3">5C</option>
-                    <option value="4">5D</option>
-
-                </select>
-                <button type="button">adicionar</button>
-            </div>
-
-            <div class="graduation">
-                <label for="graduation">Disciplina(s)</label>
-                <select>
-                    <option>selecione</option>
-                    <option value="0">Biologia</option>
-                    <option value="1">Ciências</option>
-                    <option value="2">Física</option>
-                    <option value="3">Filosofia</option>
-                    <option value="4">Geografia</option>
-                    <option value="5">História</option>
-                    <option value="6">Inglês</option>
-                    <option value="7">Matemática</option>
-                    <option value="8">Português</option>
-                    <option value="9">Química</option>
-                    <option value="10">Sociologia</option>
-                </select>
-            </div>
-        </div>
+      <div class="form-group">
+        <label for="state">Estado</label>
+        <select id="state">
+          <option value="0">Selecione</option>
+          <option value="1">AC</option>
+          <option value="2">AM</option>
+        </select>
+      </div>
     </div>
+
+    <!-- Cursos e Turmas -->
+    <div class="section">
+      <h2>Cursos e Turmas</h2>
+      <div class="form-group">
+        <label for="course">Curso</label>
+        <select id="course">
+          <option value="0">Selecione</option>
+          <option value="1">Ensino Fundamental I</option>
+          <option value="2">Ensino Fundamental II</option>
+          <option value="3">Ensino Médio</option>
+        </select>
+        <button type="button" class="add-button">Adicionar</button>
+      </div>
+
+      <div class="form-group">
+        <label for="group">Turma(s)</label>
+        <select id="group">
+          <option value="0">Selecione</option>
+          <option value="1">5A</option>
+          <option value="2">5B</option>
+          <option value="3">5C</option>
+          <option value="4">5D</option>
+        </select>
+        <button type="button" class="add-button">Adicionar</button>
+      </div>
+
+      <div class="form-group">
+        <label for="graduation">Disciplina(s)</label>
+        <select id="graduation">
+          <option value="0">Selecione</option>
+          <option value="1">Biologia</option>
+          <option value="2">Ciências</option>
+          <option value="3">Física</option>
+          <option value="4">Filosofia</option>
+          <option value="5">Geografia</option>
+          <option value="6">História</option>
+          <option value="7">Inglês</option>
+          <option value="8">Matemática</option>
+          <option value="9">Português</option>
+          <option value="10">Química</option>
+          <option value="11">Sociologia</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Botão Salvar -->
+    <div class="button-save-container">
+      <button type="submit" class="save-button">Salvar</button>
+    </div>
+  </div>
 </form>
-
 
 <!-- Angular CRUD -->
 <!-- https://www.youtube.com/watch?v=4mKY_yDq64g -->

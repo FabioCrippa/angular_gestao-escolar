@@ -35,3 +35,52 @@ table {
     width: 150px;
     margin-top: 20px;
 }
+
+.boletim-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 32px;
+}
+
+.aluno-info {
+  margin-bottom: 24px;
+  font-size: 1.1em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px 6px;
+  text-align: center;
+}
+
+th {
+  background: #f4f4f9;
+}
+
+.aprovado {
+  color: #2ecc40;
+  font-weight: bold;
+}
+.reprovado {
+  color: #e74c3c;
+  font-weight: bold;
+}
+.recuperacao {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+@media print {
+  .boletim-actions {
+    display: none;
+  }
+}
